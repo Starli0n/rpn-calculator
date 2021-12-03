@@ -1,0 +1,6 @@
+- add an authentication layer (ie: middleware with JWT)
+- use pipeline CI/CD
+- docker
+- use a database postgres for user management, redis for stacks
+- flask might not be the right choice for python, FastAPI is better
+- Why not using OpenFaas for scalability

@@ -1,0 +1,17 @@
+{
+    "files.insertFinalNewline": true,
+    "files.trimFinalNewlines": true,
+    "files.trimTrailingWhitespace": true,
+    "jest.testExplorer": {"enabled": true},
+    "jest.jestCommandLine": "yarn test",
+    "python.linting.enabled": true,
+    "python.linting.pylintEnabled": true,
+    "python.pythonPath": "${workspaceRoot}/app/venv/bin/python3",
+    "python.testing.nosetestsEnabled": false,
+    "python.testing.pytestArgs": [
+        "tests",
+        "-vvv"
+    ],
+    "python.testing.pytestEnabled": true,
+    "python.testing.unittestEnabled": true
+}

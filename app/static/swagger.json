@@ -1,0 +1,154 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "description": "RPN Calculator server",
+    "version": "1.0.0",
+    "title": "RPN Calculator Swagger API",
+  },
+  "servers": [
+    {
+      "url": "http://127.0.0.1:5000/api"
+    }
+  ],
+
+  "paths": {
+
+    "/rpn/op": {
+      "get": {
+        "tags": [
+          "rpn"
+        ],
+        "summary": "List of all the operand",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+
+    "/rpn/op/{op}/stack/{stack_id}": {
+      "post": {
+        "tags": [
+          "rpn"
+        ],
+        "summary": "Apply an operand to a stack",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "op",
+            "required": true,
+            "description": "operand",
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "stack_id",
+            "required": true,
+            "description": "stack id",
+            "type": "number"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+
+    "/rpn/stack": {
+      "post": {
+        "tags": [
+          "rpn"
+        ],
+        "summary": "Create a new stack",
+        "responses": {
+          "201": {
+            "description": "OK"
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "rpn"
+        ],
+        "summary": "List the available stacks",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+
+    "/rpn/stack/{stack_id}": {
+      "delete": {
+        "tags": [
+          "rpn"
+        ],
+        "summary": "Delete a stack",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "stack_id",
+            "required": true,
+            "description": "stack id",
+            "type": "number"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "rpn"
+        ],
+        "summary": "Push a new value to a stack",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "stack_id",
+            "required": true,
+            "description": "stack id",
+            "type": "number"
+          }
+        ],
+        "requestBody": {
+          "content": [
+            "application/json"
+          ]
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "rpn"
+        ],
+        "summary": "Get a stack",
+        "parameters": [
+          {
+            "in": "stack_id",
+            "name": "stack_id",
+            "required": true,
+            "description": "stack id",
+            "type": "number"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    }
+
+  }
+}
